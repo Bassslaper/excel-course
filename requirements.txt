@@ -1,0 +1,18 @@
+Webpack(imports/exports)
+  -Babel
+  -Sass/Scss
+  -Eslint
+  2 Modes 
+    -Dev Mode
+      Dev Server, SourceMaps, EsLint, Not Minified JS &Css
+    -Prod
+      Minified Code
+GIT
+
+  Production
+    1.0.0
+    0------------
+  Development
+    1.0.2
+    1----------------    Pull Request(PR) + 2-----------
+      2\----------------/    - после ветка 1 удаляется
