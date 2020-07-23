@@ -1,0 +1,24 @@
+{
+  "name": "excel-course",
+  "version": "1.0.0",
+  "description": "Pure JavaScript Excel Aplication",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bassslaper/excel-course.git"
+  },
+  "keywords": [
+    "js",
+    "javascript",
+    "excel"
+  ],
+  "author": "Alexandr Abrosimov <alexandr@abrosimov.net>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bassslaper/excel-course/issues"
+  },
+  "homepage": "https://github.com/Bassslaper/excel-course#readme"
+}
