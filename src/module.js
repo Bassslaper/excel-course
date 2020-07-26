@@ -1,1 +1,1 @@
-console.log('Module.js');
+console.log('Успешно подключен Module.js');
