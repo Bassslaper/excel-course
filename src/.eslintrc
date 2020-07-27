@@ -6,7 +6,9 @@
     "node": true
   },
   "rules": {
-    
+    "semi": "off",
+    "arrow-parens": "off",
+    "comma-dangle": "off"
   },
   "extends": ["eslint:recommended", "google"]
 }
