@@ -12,8 +12,8 @@ const filename = ext => isDev ? `bundl.${ext}`: `bundl.[hash].${ext}`;
 const jsLoaders = () => {
   const loaders = [
     {
-    loader: "babel-loader",
-    options: {
+      loader: "babel-loader",
+      options: {
         presets: ['@babel/preset-env']
       }
     }
