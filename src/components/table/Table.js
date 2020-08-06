@@ -1,67 +1,11 @@
-<!DOCTYPE html>
-<html>
+import {ExcelComponent} from '@core/ExcelComponent';
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <title>Pure JS Excel</title>
+export class Table extends ExcelComponent {
+  static className = 'excel__table';
 
-</head>
-
-<body>
-  <div id="app" class="container">
-
-    <div class="excel">
-      <div class="excel__header">
-        <input class="excel__input" type="text" value="Новая таблица">
-        <div class="excel__btnWrap">
-          <div class="excel__button excel__button_delete">
-            <i class="material-icons">delete</i>
-          </div>
-
-          <div class="excel__button excel__button_exit">
-            <i class="material-icons">exit_to_app</i>
-          </div>
-        </div>
-      </div>
-
-      <div class="excel__toolbar">
-        <div class="excel__button toolbar__button">
-          <i class="material-icons">format_bold</i>
-        </div>
-
-        <div class="excel__button toolbar__button">
-          <i class="material-icons">format_italic</i>
-        </div>
-
-        <div class="excel__button toolbar__button">
-          <i class="material-icons">format_underlined</i>
-        </div>
-
-        <div class="excel__button toolbar__button">
-          <i class="material-icons">format_align_justify</i>
-        </div>
-
-        <div class="excel__button toolbar__button">
-          <i class="material-icons">format_align_left</i>
-        </div>
-
-        <div class="excel__button toolbar__button">
-          <i class="material-icons">format_align_right</i>
-        </div>
-      </div>
-      <!-- .toolbar -->
-
-      <div class="excel__formula">
-        <div class="formula-info">fx</div>
-        <div class="formula-input" contenteditable="true" spellcheck="false"></div>
-      </div>
-       <!-- .formula -->
-
-      <div class="excel__table">
-        <div class="row">
+  toHTML() {
+    return `
+       <div class="row">
 
           <div class="row-info"></div>
 
@@ -157,11 +101,6 @@
         </div>
         <!-- row -->
 
-      </div>
-      <!-- table -->
-
-    </div>
-  </div>
-</body>
-
-</html>
+    `;
+  }
+}
