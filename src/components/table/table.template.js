@@ -17,7 +17,7 @@ function toColumn(col) {
   `;
 }
 
-function createRow(index, content) {
+function createRow(content, index) {
   return `
       <div class="row">
           <div class="row-info">${index ? index : ''}</div>
@@ -40,8 +40,7 @@ export function createTable(rowsCount = 5) {
       .map(toColumn)
       .join('');
 
-
-  rows.push(createRow(null, cols));
+  rows.push(createRow(cols, null));
 
 
   for (let i = 0; i < rowsCount; i++) {
@@ -50,7 +49,7 @@ export function createTable(rowsCount = 5) {
         .map(toCell)
         .join('');
 
-    rows.push(createRow(i + 1, cells));
+    rows.push(createRow(cells, i + 1));
   }
 
 

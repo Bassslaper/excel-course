@@ -16,7 +16,6 @@ export class DomListener {
   initDOMListeners() {
     this.listeners.forEach(listener => {
       const method = getMethodName(listener);
-
       if (!this[method]) {
         const name = this.name || '';
         throw new Error(
@@ -25,6 +24,7 @@ export class DomListener {
       }
       // /* Тоже самое, что и addEventListener
       this[method] = this[method].bind(this);
+
       this.$root.on(listener, this[method]);
     });
   }
