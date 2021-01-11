@@ -12,6 +12,7 @@
   height: $row-height
 
   &-info
+    position: relative
     display: flex
     align-items: center
     justify-content: center
@@ -25,8 +26,22 @@
 
   &-data
     display: flex
+  
+  &__resize
+    left: 0
+    height: 4px
+    &_line
+      position: absolute
+      left: 0
+      bottom: 0
+      height: 1px
+    &:hover,
+    &:focus
+      cursor: row-resize
+
 
 .column
+  position: relative
   display: flex
   justify-content: center
   align-items: center
@@ -37,6 +52,19 @@
   border-top: none
   border-left: none
   box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, .1)
+  &__resize
+    top: 0
+    width: 4px
+    &:hover,
+    &:focus
+      cursor: col-resize
+    &_line
+      position: absolute
+      top: 0
+      right: 0
+      width: 1px
+
+
 
 .cell
   min-width: 40px
@@ -54,11 +82,30 @@
   word-wrap: break-word
   outline: none
  
-
-
-
   &-selected
     border: none
-    outline: 1px solid #3c74ff
+    outline: 1px solid $primary-color
     z-index: 2
   
+
+.elem-resize
+  position: absolute
+  bottom: 0
+  right: 0
+  opacity: 0
+  background-color: $primary-color
+  transition: opacity 0.05s
+  z-index: 999
+  &_line
+    background-color: $primary-color
+
+    opacity: 0
+  &:hover,
+  &:focus,
+  &:active
+    opacity: 1
+  &:active .elem-resize_line
+    opacity: 1
+
+
+
