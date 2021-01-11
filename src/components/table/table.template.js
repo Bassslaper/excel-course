@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable no-unused-vars */
 const CODES = {
   A: 65,
@@ -5,22 +6,34 @@ const CODES = {
 };
 
 
-function toCell() {
+function toCell(_, index) {
   return `
-    <div class="cell" contenteditable></div>
+    <div class="cell" contenteditable data-col="${index}"></div>
   `;
 }
 
-function toColumn(col) {
+function toColumn(col, index) {
   return `
-   <div class="column">${col}</div>
+   <div class="column" data-type="resizeble" data-col="${index}">
+    ${col}
+    <div class="column__resize elem-resize" data-resize="col">
+      <div class="column__resize_line elem-resize_line" data-resize-line="col"></div> 
+    </div>
+   </div>
   `;
 }
 
 function createRow(content, index) {
+  const resizer = index ? `<div class="row__resize elem-resize" 
+                                data-resize="row">
+                                  <div class="row__resize_line elem-resize_line" data-resize-line="row"></div> 
+                                </div>` : ''
   return `
-      <div class="row">
-          <div class="row-info">${index ? index : ''}</div>
+      <div class="row" data-type="resizeble">
+          <div class="row-info">
+            ${index ? index : ''}
+            ${resizer}
+          </div>
           <div class="row-data">${content}</div>
       </div>
   `;
@@ -51,7 +64,6 @@ export function createTable(rowsCount = 5) {
 
     rows.push(createRow(cells, i + 1));
   }
-
 
   return rows.join('');
 }
